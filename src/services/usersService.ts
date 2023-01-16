@@ -20,4 +20,11 @@ const login = async (loginBody: TLogin) => {
   return { status: 200, token };
 };
 
-export default { login };
+const createUser = async (userBody: TUsers) => {
+  const user = await usersModel.createUser(userBody);
+
+  const token = generateToken(user);
+  return token;
+};
+
+export default { login, createUser };

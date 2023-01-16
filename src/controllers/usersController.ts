@@ -15,4 +15,10 @@ const login = async (req: Request, res: Response) => {
   return error ? res.status(status).json(error) : res.status(status).json({ token });
 };
 
-export default { login };
+const createUser = async (req: Request, res: Response) => {
+  const { body } = req;
+  const token = await usersService.createUser(body);
+  res.status(201).json({ token });
+};
+
+export default { login, createUser };

@@ -6,7 +6,7 @@ export type TProducts = {
 };
 
 export type TUsers = {
-  id?: string,
+  id?: number,
   username: string,
   vocation: string,
   level?: number,
