@@ -1,8 +1,8 @@
 import express from 'express';
-import productsRoute from './roruters/productsRoute';
-import loginRoute from './roruters/loginRoute';
-import usersRoute from './roruters/usersRoute';
-import orderRoute from './roruters/orderRoute';
+import productsRoute from './routers/productsRoute';
+import loginRoute from './routers/loginRoute';
+import usersRoute from './routers/usersRoute';
+import orderRoute from './routers/orderRoute';
 
 const app = express();
 
