@@ -1,14 +1,25 @@
 import { NextFunction, Request, Response } from 'express';
-import { NAME_STRING_BASE,
-  NAME_STRING_EMPTY,
-  NAME_STRING_MIN,
-  validateProducts } from '../utils/validateInputs';
+import productsSchema from '../utils/validateInputs';
+
+const statusCheck = (type: string | undefined) => {
+  let status = 400;
+  if (type !== 'any.required') {
+    status = 422;
+  }
+  return status;
+};
 
 const validProducts = (req: Request, res: Response, next: NextFunction) => {
   const { body } = req;
-  const valid = validateProducts(body);
-  if (valid === NAME_STRING_EMPTY) return res.status(400).json(valid);
-  if (valid === NAME_STRING_BASE || valid === NAME_STRING_MIN) return res.status(422).json(valid);
+  const { error } = productsSchema.validate(body);
+
+  // console.log(error);
+  if (error) {
+    const messageError = error?.details[0].message;
+    const type = error?.details[0].type;
+    const status = statusCheck(type);
+    return res.status(status).json({ message: messageError });
+  }
 
   next();
 };
