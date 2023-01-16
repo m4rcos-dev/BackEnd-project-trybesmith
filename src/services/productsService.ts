@@ -6,4 +6,9 @@ const getAll = async (): Promise<TProducts[]> => {
   return products;
 };
 
-export default { getAll };
+const createProduct = async (product: TProducts): Promise<TProducts> => {
+  const result = productsModel.createProduct(product);
+  return result;
+};
+
+export default { getAll, createProduct };
