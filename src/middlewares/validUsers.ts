@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { productsSchema } from '../utils/validateInputs';
+import { usersSchema } from '../utils/validateInputs';
 
 const statusCheck = (type: string | undefined) => {
   let status = 400;
@@ -9,9 +9,9 @@ const statusCheck = (type: string | undefined) => {
   return status;
 };
 
-const validProducts = (req: Request, res: Response, next: NextFunction) => {
+const validUsers = (req: Request, res: Response, next: NextFunction) => {
   const { body } = req;
-  const { error } = productsSchema.validate(body);
+  const { error } = usersSchema.validate(body);
 
   // console.log(error);
   if (error) {
@@ -24,4 +24,4 @@ const validProducts = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-export default validProducts;
+export default validUsers;
