@@ -1,4 +1,4 @@
-#### EN - English [(Versão em Português Brasil aqui)](https://github.com/m4rcos-dev/BackEnd-project-mysql-one-for-all/blob/main/README_pt-br.md)
+#### EN - English [(Versão em Português Brasil aqui)](https://github.com/m4rcos-dev/BackEnd-project-trybesmith/blob/main/README_pt-br.md)
 
 <h1 align="center">🎉 Welcome to my project trybesmith repository </h1>
 
@@ -88,7 +88,7 @@
 
 </details>
 <details>
-   <summary><strong>🏦 Bank Connection</strong></summary><br />
+   <summary><strong>🏦 BD Connection</strong></summary><br />
 
    The local database connection must contain the following parameters:
 
