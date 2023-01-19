@@ -23,3 +23,18 @@ export type TOrders = {
   userId: number,
   productsIds: number
 };
+
+export type TOrderCreated = {
+  id?: number,
+  userId: number,
+  productsIds: number[]
+};
+
+export type TCurrentUser = {
+  currentUser: {
+    id: number,
+    username: string,
+    iat: number,
+    exp: number
+  }
+} & TOrderCreated;
